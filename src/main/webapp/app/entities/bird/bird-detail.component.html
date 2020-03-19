@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="bird">
+            <h2><span jhiTranslate="jhipsterDemoApp.bird.detail.title">Bird</span> {{bird.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterDemoApp.bird.name">Name</span></dt>
+                <dd>
+                    <span>{{bird.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.bird.add">Add</span></dt>
+                <dd>
+                    <span>{{bird.add}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.bird.age">Age</span></dt>
+                <dd>
+                    <span>{{bird.age}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/bird', bird.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

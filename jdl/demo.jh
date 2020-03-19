@@ -1,0 +1,15 @@
+entity Bird {
+  name String required,
+
+  add String required maxlength(100),
+
+  age Integer required min(18)
+
+}
+paginate Bird with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service Bird with serviceImpl 

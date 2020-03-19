@@ -1,0 +1,44 @@
+
+entity Department {
+	departmentName String required
+}
+
+
+
+entity Employee {
+	/**
+	* The firstname attribute.
+	*/
+	firstName String,
+	lastName String,
+	email String,
+	phoneNumber String,
+	hireDate Instant,
+	salary Long,
+	commissionPct Long
+}
+
+
+
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+
+	Department{employee} to
+	/**
+	* Another side of the same relationship
+	*/
+	Employee
+}
+
+
+
+paginate Department with infinite-scroll
+paginate Employee with pagination
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+angularSuffix * with mySuffix
